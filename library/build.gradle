@@ -1,5 +1,4 @@
 apply plugin: 'com.android.library'
-apply plugin: 'com.novoda.bintray-release'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
@@ -34,13 +33,5 @@ dependencies {
     testImplementation 'junit:junit:4.12'
 }
 
-publish {
-    userOrg = 'khkong'
-    groupId = 'kong.permission'
-    artifactId = 'permission-utils'
-    publishVersion = '0.9.0'
-    desc = 'https://github.com/kyeonghwan-kong/PermissionUtils'
-    website = 'https://github.com/kyeonghwan-kong/PermissionUtils'
-    issueTracker = "https://github.com/kyeonghwan-kong/PermissionUtils/issues"
-    repository = "https://github.com/kyeonghwan-kong/PermissionUtils.git"
-}
+apply plugin: 'com.github.dcendents.android-maven'
+group='com.github.kyeonghwan-kong'
