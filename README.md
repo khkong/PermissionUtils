@@ -36,7 +36,7 @@ Now you can ask permission :D
 PermissionManager.Builder()
         .permission(PermissionEnum.WRITE_EXTERNAL_STORAGE)
         .askAgain(true)
-        .askAgainCallback(new AskAgainCallback() {
+        .callbackForAskAgain(new AskAgainCallback() {
             @Override
             public void showRequestPermission(UserResponse response) {
                     showDialog(response);

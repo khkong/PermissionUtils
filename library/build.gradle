@@ -24,6 +24,9 @@
 
 apply plugin: 'com.android.library'
 apply plugin: "guru.stefma.bintrayrelease"
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'org.jetbrains.dokka-android' // dokka documentation/
 
 android {
 
@@ -50,15 +53,31 @@ android {
 }
 
 dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'androidx.legacy:legacy-support-v13:1.0.0'
     implementation 'androidx.fragment:fragment:1.0.0'
+    testImplementation 'junit:junit:4.12'
 }
 
 version = '3.0.2'
-group = 'rebus'
+group = 'kong'
 publish {
-    userOrg = 'raphaelbussa'
+    userOrg = 'Kyeonghwan-Kong'
     artifactId = 'permission-utils'
     desc = 'Check marshmallow permission easily'
-    website = 'https://rebus007.github.io/PermissionUtils/'
+    website = 'https://github.com/kyeonghwan-kong/PermissionUtils'
+}
+
+task dokka(overwrite: true, type: org.jetbrains.dokka.gradle.DokkaAndroidTask) {
+
+    outputFormat = 'html'
+    outputDirectory = "$buildDir/dokka"
+    // Do not create index pages for empty packages
+    skipEmptyPackages = true
+
+    //Do not output deprecated members. Applies globally, can be overridden by packageOptions
+    skipDeprecated = false
+
+    //No default documentation link to kotlin-stdlib
+    noStdlibLink = false
 }

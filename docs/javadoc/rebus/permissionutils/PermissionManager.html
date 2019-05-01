@@ -163,7 +163,7 @@ extends java.lang.Object</pre>
 </tr>
 <tr id="i4" class="altColor">
 <td class="colFirst"><code><a href="../../rebus/permissionutils/PermissionManager.html" title="class in rebus.permissionutils">PermissionManager</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../rebus/permissionutils/PermissionManager.html#askAgainCallback-rebus.permissionutils.AskAgainCallback-">askAgainCallback</a></span>(<a href="../../rebus/permissionutils/AskAgainCallback.html" title="interface in rebus.permissionutils">AskAgainCallback</a>&nbsp;askAgainCallback)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../rebus/permissionutils/PermissionManager.html#callbackForAskAgain-rebus.permissionutils.AskAgainCallback-">callbackForAskAgain</a></span>(<a href="../../rebus/permissionutils/AskAgainCallback.html" title="interface in rebus.permissionutils">AskAgainCallback</a>&nbsp;callbackForAskAgain)</code>&nbsp;</td>
 </tr>
 <tr id="i5" class="rowColor">
 <td class="colFirst"><code>static <a href="../../rebus/permissionutils/PermissionManager.html" title="class in rebus.permissionutils">PermissionManager</a></code></td>
@@ -171,15 +171,15 @@ extends java.lang.Object</pre>
 </tr>
 <tr id="i6" class="altColor">
 <td class="colFirst"><code><a href="../../rebus/permissionutils/PermissionManager.html" title="class in rebus.permissionutils">PermissionManager</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../rebus/permissionutils/PermissionManager.html#callback-rebus.permissionutils.FullCallback-">callback</a></span>(<a href="../../rebus/permissionutils/FullCallback.html" title="interface in rebus.permissionutils">FullCallback</a>&nbsp;fullCallback)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../rebus/permissionutils/PermissionManager.html#callback-rebus.permissionutils.FullCallback-">callback</a></span>(<a href="../../rebus/permissionutils/FullCallback.html" title="interface in rebus.permissionutils">FullCallback</a>&nbsp;callbackForAllResult)</code>&nbsp;</td>
 </tr>
 <tr id="i7" class="rowColor">
 <td class="colFirst"><code><a href="../../rebus/permissionutils/PermissionManager.html" title="class in rebus.permissionutils">PermissionManager</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../rebus/permissionutils/PermissionManager.html#callback-rebus.permissionutils.SimpleCallback-">callback</a></span>(<a href="../../rebus/permissionutils/SimpleCallback.html" title="interface in rebus.permissionutils">SimpleCallback</a>&nbsp;simpleCallback)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../rebus/permissionutils/PermissionManager.html#callback-rebus.permissionutils.SimpleCallback-">callback</a></span>(<a href="../../rebus/permissionutils/SimpleCallback.html" title="interface in rebus.permissionutils">SimpleCallback</a>&nbsp;callbackForGranted)</code>&nbsp;</td>
 </tr>
 <tr id="i8" class="altColor">
 <td class="colFirst"><code><a href="../../rebus/permissionutils/PermissionManager.html" title="class in rebus.permissionutils">PermissionManager</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../rebus/permissionutils/PermissionManager.html#callback-rebus.permissionutils.SmartCallback-">callback</a></span>(<a href="../../rebus/permissionutils/SmartCallback.html" title="interface in rebus.permissionutils">SmartCallback</a>&nbsp;smartCallback)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../rebus/permissionutils/PermissionManager.html#callback-rebus.permissionutils.SmartCallback-">callback</a></span>(<a href="../../rebus/permissionutils/SmartCallback.html" title="interface in rebus.permissionutils">SmartCallback</a>&nbsp;callbackForGrantedAndDeniedForever)</code>&nbsp;</td>
 </tr>
 <tr id="i9" class="rowColor">
 <td class="colFirst"><code>static void</code></td>
@@ -402,10 +402,10 @@ extends java.lang.Object</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>callback</h4>
-<pre>public&nbsp;<a href="../../rebus/permissionutils/PermissionManager.html" title="class in rebus.permissionutils">PermissionManager</a>&nbsp;callback(<a href="../../rebus/permissionutils/FullCallback.html" title="interface in rebus.permissionutils">FullCallback</a>&nbsp;fullCallback)</pre>
+<pre>public&nbsp;<a href="../../rebus/permissionutils/PermissionManager.html" title="class in rebus.permissionutils">PermissionManager</a>&nbsp;callback(<a href="../../rebus/permissionutils/FullCallback.html" title="interface in rebus.permissionutils">FullCallback</a>&nbsp;callbackForAllResult)</pre>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>fullCallback</code> - set fullCallback for the request</dd>
+<dd><code>callbackForAllResult</code> - set callbackForAllResult for the request</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>current instance</dd>
 </dl>
@@ -417,10 +417,10 @@ extends java.lang.Object</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>callback</h4>
-<pre>public&nbsp;<a href="../../rebus/permissionutils/PermissionManager.html" title="class in rebus.permissionutils">PermissionManager</a>&nbsp;callback(<a href="../../rebus/permissionutils/SimpleCallback.html" title="interface in rebus.permissionutils">SimpleCallback</a>&nbsp;simpleCallback)</pre>
+<pre>public&nbsp;<a href="../../rebus/permissionutils/PermissionManager.html" title="class in rebus.permissionutils">PermissionManager</a>&nbsp;callback(<a href="../../rebus/permissionutils/SimpleCallback.html" title="interface in rebus.permissionutils">SimpleCallback</a>&nbsp;callbackForGranted)</pre>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>simpleCallback</code> - set simpleCallback for the request</dd>
+<dd><code>callbackForGranted</code> - set callbackForGranted for the request</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>current instance</dd>
 </dl>
@@ -432,25 +432,25 @@ extends java.lang.Object</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>callback</h4>
-<pre>public&nbsp;<a href="../../rebus/permissionutils/PermissionManager.html" title="class in rebus.permissionutils">PermissionManager</a>&nbsp;callback(<a href="../../rebus/permissionutils/SmartCallback.html" title="interface in rebus.permissionutils">SmartCallback</a>&nbsp;smartCallback)</pre>
+<pre>public&nbsp;<a href="../../rebus/permissionutils/PermissionManager.html" title="class in rebus.permissionutils">PermissionManager</a>&nbsp;callback(<a href="../../rebus/permissionutils/SmartCallback.html" title="interface in rebus.permissionutils">SmartCallback</a>&nbsp;callbackForGrantedAndDeniedForever)</pre>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>smartCallback</code> - set smartCallback for the request</dd>
+<dd><code>callbackForGrantedAndDeniedForever</code> - set callbackForGrantedAndDeniedForever for the request</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>current instance</dd>
 </dl>
 </li>
 </ul>
-<a name="askAgainCallback-rebus.permissionutils.AskAgainCallback-">
+<a name="callbackForAskAgain-rebus.permissionutils.AskAgainCallback-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>askAgainCallback</h4>
-<pre>public&nbsp;<a href="../../rebus/permissionutils/PermissionManager.html" title="class in rebus.permissionutils">PermissionManager</a>&nbsp;askAgainCallback(<a href="../../rebus/permissionutils/AskAgainCallback.html" title="interface in rebus.permissionutils">AskAgainCallback</a>&nbsp;askAgainCallback)</pre>
+<h4>callbackForAskAgain</h4>
+<pre>public&nbsp;<a href="../../rebus/permissionutils/PermissionManager.html" title="class in rebus.permissionutils">PermissionManager</a>&nbsp;callbackForAskAgain(<a href="../../rebus/permissionutils/AskAgainCallback.html" title="interface in rebus.permissionutils">AskAgainCallback</a>&nbsp;callbackForAskAgain)</pre>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>askAgainCallback</code> - set askAgainCallback for the request</dd>
+<dd><code>callbackForAskAgain</code> - set callbackForAskAgain for the request</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>current instance</dd>
 </dl>
