@@ -1,32 +1,7 @@
-/*
- * The MIT License (MIT)
- *
- * Copyright (c) 2016 Raphaël Bussa
- *
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- *
- * The above copyright notice and this permission notice shall be included in all
- * copies or substantial portions of the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- * SOFTWARE.
- */
-
 apply plugin: 'com.android.library'
-apply plugin: "guru.stefma.bintrayrelease"
+apply plugin: 'com.novoda.bintray-release'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
-apply plugin: 'org.jetbrains.dokka-android' // dokka documentation/
 
 android {
 
@@ -59,25 +34,13 @@ dependencies {
     testImplementation 'junit:junit:4.12'
 }
 
-version = '3.0.2'
-group = 'kong'
 publish {
-    userOrg = 'Kyeonghwan-Kong'
+    userOrg = 'khkong'
+    groupId = 'kong.permission'
     artifactId = 'permission-utils'
-    desc = 'Check marshmallow permission easily'
+    publishVersion = '0.9.0'
+    desc = 'https://github.com/kyeonghwan-kong/PermissionUtils'
     website = 'https://github.com/kyeonghwan-kong/PermissionUtils'
-}
-
-task dokka(overwrite: true, type: org.jetbrains.dokka.gradle.DokkaAndroidTask) {
-
-    outputFormat = 'html'
-    outputDirectory = "$buildDir/dokka"
-    // Do not create index pages for empty packages
-    skipEmptyPackages = true
-
-    //Do not output deprecated members. Applies globally, can be overridden by packageOptions
-    skipDeprecated = false
-
-    //No default documentation link to kotlin-stdlib
-    noStdlibLink = false
+    issueTracker = "https://github.com/kyeonghwan-kong/PermissionUtils/issues"
+    repository = "https://github.com/kyeonghwan-kong/PermissionUtils.git"
 }
