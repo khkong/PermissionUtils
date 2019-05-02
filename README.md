@@ -9,7 +9,7 @@ To get a Git project into your build:
 **Step 1.** Add the JitPack repository to your build file
 
 Add it in your root build.gradle at the end of repositories:
-```
+```Gradle
 	allprojects {
 		repositories {
 			...
@@ -19,10 +19,70 @@ Add it in your root build.gradle at the end of repositories:
 ```
 
 **Step 2.** Add the dependency
-```
+```Gradle
 	dependencies {
 	        implementation 'com.github.kyeonghwan-kong:PermissionUtils:1.0.0-alpha1'
 	}
+```
+## Sample code
+
+**Step 1.** Create `PermissionManager::class`
+
+`setRetry()` and `setRequestCode()` are optional. Default request code is *100*.
+
+```Kotlin
+class MainActivity : AppCompatActivity() {
+    private lateinit var permissionManager: PermissionManager
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+	
+        permissionManager = PermissionManager.Builder()
+            .addPermission(
+                Manifest.permission.ACCESS_FINE_LOCATION,
+                Manifest.permission.ACCESS_COARSE_LOCATION,
+                Manifest.permission_group.CAMERA
+            )
+            .setRetry(2)
+            .setRequestCode(100)
+            .whenAllPass {
+                doNextProcess()
+            }
+            .whenDenied { deniedPermissions, foreverDeniedPermissions ->
+                goCustomPageForPermissionRequest()
+            }
+            .build()
+    }
+}
+```
+
+**Step 2.** Call `PermissionManager.request()`
+```Kotlin
+    override fun onResume() {
+        super.onResume()
+        permissionManager.request(this)
+    }
+```
+
+**Step 3.** Override `onRequestPermissionsResult()`. and call `PermissionManager.handleResult()`
+
+just insert a single line of code!
+
+```Kotlin
+    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        permissionManager.handleResult(this@MainActivity, requestCode, permissions, grantResults)
+    }
+```
+
+**Little extra**. You can also take the following actions when user checked *Don't ask again*
+
+So, You will be taken to the application settings screen.
+```Kotlin
+            .whenDenied { deniedPermissions, foreverDeniedPermissions ->
+		if(foreverDeniedPermissions.isNotEmpty(){
+			PermissionManager.openApplicationSettings(this, application.packageName)
+		}
+            }
 ```
 
 ## License
