@@ -1,7 +1,7 @@
 # Permission Utils
 [![](https://jitpack.io/v/kyeonghwan-kong/PermissionUtils.svg)](https://jitpack.io/#kyeonghwan-kong/PermissionUtils)
 
-Quickly and easily Runtime permissions
+Get runtime permissions on Android quickly and easily.
 
 ## How to
 To get a Git project into your build:
