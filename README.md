@@ -3,6 +3,9 @@
 
 Get runtime permissions on Android quickly and easily.😎
 
+## About Fork
+This is Android library for get runtime permissions quickly and easily. I forked in Kotlin to make it easier and faster to use. So I refactored and replaced it with simpler, more intuitive code. This code was forked in [Raphaelbussa's PermissionUtils](https://github.com/raphaelbussa/PermissionUtils), which helped to set up the concept and basic structure of the library. It does not provide all of the features provided by the original, and provides simpler functionality.
+
 ## How to
 To get a Git project into your build:
 
@@ -84,8 +87,6 @@ So, You will be taken to the application settings screen.
 		}
             }
 ```
-## About Fork
-This is Android library for get runtime permissions quickly and easily. I forked in Kotlin to make it easier and faster to use. So I refactored and replaced it with simpler, more intuitive code. This code was forked in [Raphaelbussa's PermissionUtils](https://github.com/raphaelbussa/PermissionUtils), which helped to set up the concept and basic structure of the library. It does not provide all of the features provided by the original, and provides simpler functionality.
 
 ## License
 ```
