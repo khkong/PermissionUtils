@@ -1,8 +1,8 @@
 # Permission Utils
-[![](https://jitpack.io/v/kyeonghwan-kong/PermissionUtils.svg)](https://jitpack.io/#kyeonghwan-kong/PermissionUtils)
-[![API](https://img.shields.io/badge/API-14%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=14) [![GitHub issues](https://img.shields.io/github/issues/kyeonghwan-kong/PermissionUtils.svg)](https://github.com/kyeonghwan-kong/PermissionUtils/issues)
-[![GitHub stars](https://img.shields.io/github/stars/kyeonghwan-kong/PermissionUtils.svg)](https://github.com/kyeonghwan-kong/PermissionUtils/stargazers) 
-[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/kyeonghwan-kong/PermissionUtils/master/LICENSE) 
+[![](https://jitpack.io/v/khkong/PermissionUtils.svg)](https://jitpack.io/#khkong/PermissionUtils)
+[![API](https://img.shields.io/badge/API-14%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=14) [![GitHub issues](https://img.shields.io/github/issues/khkong/PermissionUtils.svg)](https://github.com/khkong/PermissionUtils/issues)
+[![GitHub stars](https://img.shields.io/github/stars/khkong/PermissionUtils.svg)](https://github.com/kyeonghwan-kong/PermissionUtils/stargazers) 
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/khkong/PermissionUtils/master/LICENSE) 
 
 Get runtime permissions on Android quickly and easily.😎
 
@@ -27,7 +27,7 @@ Add it in your root build.gradle at the end of repositories:
 **Step 2.** Add the dependency
 ```Gradle
 	dependencies {
-	        implementation 'com.github.kyeonghwan-kong:PermissionUtils:1.0.0-alpha1'
+	        implementation 'com.github.khkong:PermissionUtils:1.0.0-alpha1'
 	}
 ```
 ## Sample code
